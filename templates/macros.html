@@ -1,0 +1,83 @@
+{# macros file holds jinja functions that are going to be re-used in the project #}
+
+{% macro upcoming_features() %}
+	<div>
+		<ol type="I">
+		{% set feature_items = {'Messaging':'one', 'Checking Work Station':'two', 'Visualizing system performance':'three', 'Having a visualization point for leave and off days': 'four'} %}
+		{% for feature in feature_items.items() %}
+			<li>{{ feature[0] }}</li>
+			<p>{{ feature[1] }}</p>
+		{% endfor %}
+		</ul>
+	</div>
+{% endmacro %}
+
+{% macro modal_1(title=None, body=None, footer=None) %}
+<div class="modal fade" id="examplemodal" tabindex="-1" aria-labelledby="examplemodalLabel" aria-hidden="false">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="examplemodalLabel">{{ title }}</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">{{ body }}</div>
+			<div class="modal-footer">
+				<div>{{ footer }}</div>
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+{% endmacro %}
+
+{% macro alert(heading, body, footer) %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+	<h4 class="alert-heading">{{ heading }}</h4>
+	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	<p>{{ body }}</p>
+	<hr>
+	<p class="mb-0">{{ footer }}</p>
+</div>
+{% endmacro %}
+
+{% macro modal_2(id, title, body, button_text, btn_class) %}
+{# It returns a button with modal options, where function arguments give more control #}
+<button data-bs-toggle="modal" data-bs-target="#{{ id }}" class="btn {{ btn_class }}">{{ button_text }}</button>
+<div class="modal fade" id="{{ id }}" tabindex="-1" aria-labelledby="{{ id }}Label" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="{{ id }}Label">{{ title }}</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">{{ body }}</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+{% endmacro %}
+
+{% macro control_center_cards(title, subtitle, text, button_href) %}
+<div class="container-lg align-content-center">
+	<div class="d-md-flex">
+		<div class="card" style="width:18rem">
+			<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+				<img src="{{ url_for('static', filename='img/Neuroscience of human intellingence.jpg') }}" class="img-fluid"/>
+				<a href="#!">
+				  <div class="mask" style="background-color: #fbfbfb26;"></div>
+				</a>
+			  </div>
+			<section class="card-body">
+				<h4 class="card-title mb-2 ">{{ title }}</h4>
+				<span class="card-subtitle mb-2 text-muted">{{ subtitle }}</span>
+				<p class="card-text">{{ text }}</p>
+				<a href="#" class="btn btn-outline-primary">Access now</a>
+			</section>
+		</div>
+	</div>
+</div>
+{% endmacro %}

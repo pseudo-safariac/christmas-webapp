@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% import 'macros.html' as macros %}
+<html lang="en-GB">
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="author" content="Kevin Ngigi">
+	<meta name="description" content="The website is created as an attempt to bring together people in the company and to disseminate information in a more structured way.">
+	<link rel="icon" href="{{ url_for('static', filename='img/Neuroscience of human intellingence.ico') }}" type="image/x-icon" />
+	<link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='img/Neuroscience of human intellingence.ico') }}" type="image/x-icon" />
+	<script src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.min.js') }}" defer></script>
+	
+
+	<link href="/static/css/main.min.css" rel="stylesheet" type="text/css" defer>
+	<script src="{{ url_for('static', filename='node_modules/@popperjs/core/dist/umd/popper.js') }}" async></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='node_modules/bootstrap-icons/font/bootstrap-icons.css') }}"
+	<link rel="icon" href="{{ url_for('static', filename='img/Neuroscience of human intellingence.jpg') }}" type="image/x-icon">
+	<script src="https://kit.fontawesome.com/f09c88e4f2.js" crossorigin="anonymous"></script>
+	{% block head %}{% endblock %}
+	<title>{% block title %}{% endblock %}</title>
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-xmas_red">
+{% block body %}{% endblock %}
+{% block footer %}
+<!--
+	<footer class="bd-footer py-4 mt-5 bg-primary">
+		<div class="col align-items-center">
+			<div class="row text-md-start flex-wrap mb-1">
+				<div class="text-center text-bg-danger">
+				<a href="#" class="mb-sm-2" title="Open and view the Terms of service">Terms of Service</a>
+				<a href="#" class="mb-sm-2" title="Review the Privacy Policy Been offered">Privacy Policy</a>
+				<a href="#" class="mb-sm-2" title="Contact the Administrator Privately via email">Contact Administrator</a>
+				</div>
+			</div>
+		</div>-->
+{% endblock %}
+  </body>
+</html>

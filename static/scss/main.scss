@@ -1,0 +1,24 @@
+// Include any default variable overrides here (though functions won't be available)
+$light_blue: #14ae9a;
+$pine_green: #4E9525;
+$xmas_red: #990000;
+
+$theme-colors: (
+  "light_blue": $light_blue,
+  "pine_green": $pine_green,
+  "xmas_red": $xmas_red,
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Then add additional custom code here
+
+// Create your own map
+$custom-colors: (
+  "alpha": red,
+  "light_blue": $light_blue,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
