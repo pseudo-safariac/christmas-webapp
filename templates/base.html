@@ -1,39 +1,57 @@
 <!DOCTYPE html>
 {% import 'macros.html' as macros %}
 <html lang="en-GB">
-  <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="author" content="Kevin Ngigi">
-	<meta name="description" content="The website is created as an attempt to bring together people in the company and to disseminate information in a more structured way.">
-	<link rel="icon" href="{{ url_for('static', filename='img/Neuroscience of human intellingence.ico') }}" type="image/x-icon" />
-	<link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='img/Neuroscience of human intellingence.ico') }}" type="image/x-icon" />
-	<script src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.min.js') }}" defer></script>
-	
-
-	<link href="/static/css/main.min.css" rel="stylesheet" type="text/css" defer>
-	<script src="{{ url_for('static', filename='node_modules/@popperjs/core/dist/umd/popper.js') }}" async></script>
-	<link rel="stylesheet" href="{{ url_for('static', filename='node_modules/bootstrap-icons/font/bootstrap-icons.css') }}"
-	<link rel="icon" href="{{ url_for('static', filename='img/Neuroscience of human intellingence.jpg') }}" type="image/x-icon">
-	<script src="https://kit.fontawesome.com/f09c88e4f2.js" crossorigin="anonymous"></script>
-	{% block head %}{% endblock %}
-	<title>{% block title %}{% endblock %}</title>
-  </head>
-  <body class="d-flex h-100 text-center text-white bg-xmas_red">
-{% block body %}{% endblock %}
-{% block footer %}
-<!--
-	<footer class="bd-footer py-4 mt-5 bg-primary">
-		<div class="col align-items-center">
-			<div class="row text-md-start flex-wrap mb-1">
-				<div class="text-center text-bg-danger">
-				<a href="#" class="mb-sm-2" title="Open and view the Terms of service">Terms of Service</a>
-				<a href="#" class="mb-sm-2" title="Review the Privacy Policy Been offered">Privacy Policy</a>
-				<a href="#" class="mb-sm-2" title="Contact the Administrator Privately via email">Contact Administrator</a>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="author" content="Kevin Ngigi">
+		<meta name="description" content="The website is created as an attempt to bring together people in the company and to disseminate information in a more structured way.">
+		<meta name="revised" content="19/12/2022">
+		<link rel="icon" href="{{ url_for('static', filename='img/Neuroscience of human intelligence.ico') }}" type="image/x-icon">
+		<link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='img/Neuroscience of human intelligence.ico') }}" type="image/x-icon">
+		<link href="/static/css/main.min.css" rel="stylesheet" type="text/css" defer>
+		<script src="https://kit.fontawesome.com/f09c88e4f2.js" crossorigin="anonymous" defer></script>
+		<!--<script src="{{ url_for('static', filename='node_modules/@popperjs/core/dist/umd/popper.min.js') }}" async></script>
+		<script src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>-->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,200&display=swap" rel="stylesheet">
+		{% block head %}{% endblock %}
+		<title>{% block title %}{% endblock %}</title>
+		{% block style %}{% endblock %}
+	</head>	
+	<body class="d-flex h-100 text-center bg-xmas_red">
+		<div class="d-flex row h-100 text-center bg-pine_green">
+		  <div class="bg-image" style="background-image: url(/static/img/christmas_2.webp);">
+			<header class="mb-auto">
+				<br>
+				<div>
+					<a href="#" tabindex="0">
+						<h1 class="float-md-start mb-0 text-white" style="padding: 0 10px; text-shadow: 4px 6px 2px rgba(0,0,0,0.5);">WWTP</h1>
+					  </a>					  
+					  <div class="d-flex justify-content-center mt-3 mx-2">
+						<a class="btn btn-outline-pine_green text-white" href="#form-section" role="button">
+						  Send Greetings <i class="fa-solid fa-wand-magic-sparkles"></i>
+						</a>
+						<a class="btn btn-outline-pine_green text-white mx-3" href="#read-greetings" role="button">
+							Read Greetings <i class="fa-solid fa-book-open"></i>
+						</a>
+					  </div>
+					  
 				</div>
-			</div>
-		</div>-->
-{% endblock %}
-  </body>
+			</header>
+			{% block body %}{% endblock %}
+			{% block footer %}
+			  <footer class="bg-dark py-3 text-center">
+			  <p class="text-white mb-0">
+				Made with love by
+				<a href="#" class="text-white">Kevin</a>
+				😊
+			  </p>
+			  </footer>
+			{% endblock %}
+			{% block script %}{% endblock %}
+		  </div>
+		</div>
+	  </body>
 </html>

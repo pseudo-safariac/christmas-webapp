@@ -1,24 +1,182 @@
-// Include any default variable overrides here (though functions won't be available)
-$light_blue: #14ae9a;
-$pine_green: #4E9525;
-$xmas_red: #990000;
+// Define default variables for theme colors
+$light-blue: #023047;
+$pine-green: #4e9525;
+$xmas-red: #990000;
+$gold: #FFD700;
 
+// Create a map of theme colors
 $theme-colors: (
   "light_blue": $light_blue,
   "pine_green": $pine_green,
   "xmas_red": $xmas_red,
+  "gold": $gold,
 );
 
+// Import Bootstrap styles
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
-// Then add additional custom code here
+// Create a mixin for custom colors
+@mixin custom-colors($colors) {
+  $custom-colors: $colors;
+  // Merge the theme colors map and the custom colors map
+  $theme-colors: map-merge($theme-colors, $custom-colors);
+}
 
-// Create your own map
-$custom-colors: (
-  "alpha": red,
-  "light_blue": $light_blue,
-);
+// Include the custom-colors mixin
+@include custom-colors((
+  "light-blue": $light-blue,
+));
 
-// Merge the maps
-$theme-colors: map-merge($theme-colors, $custom-colors);
+// Style the off-canvas container element
+.offcanvas-container {
+  // Set the container to be fixed to the top and left of the page
+  position: fixed;
+  top: 0;
+  left: -300px; // Set the width of the container to 300px
+}
+  // Style the footer element
+footer {
+  // Set the position of the footer to fixed
+  position: fixed;
+  // Set the bottom position of the footer to 0
+  bottom: 0;
+  // Set the width of the footer to 100%
+  width: 100%;
+  // Set the z-index to ensure the footer is displayed on top of other elements
+  z-index: 1;
+
+  // Disable scrolling for the footer
+  overflow: hidden;
+
+  // Set the background color of the footer to a gradient
+  background: linear-gradient(to top, #990000, #B20000, #CC3333);
+
+  // Set the height of the footer to 200px
+  height: 60px;
+
+  // Set the font size of the text in the footer
+  font-size: 18px;
+}
+
+// Set the base font size for all elements
+* {
+  font-size: 16px;
+}
+
+p {
+  font-size: calc(1.1 * 1em);
+  text-shadow: 1px 1px 2px rgba(255, 215, 0, 0.5);
+}
+
+
+// Increase the font size for larger screens
+@media (min-width: 992px) {
+  * {
+    font-size: 18px;
+  }
+}
+
+// Decrease the font size for smaller screens
+@media (max-width: 576px) {
+  * {
+    font-size: 14px;
+  }
+}
+
+@mixin header-font-sizes() {
+  $header-font-size: 4vw; // initial font size for the h1 element
+
+  @for $i from 1 through 6 {
+    h#{$i} { // generate styles for each header element
+      font-size: $header-font-size;
+    }
+    $header-font-size: $header-font-size - 0.5vw; // decrease font size by 0.5vw for each iteration
+  }
+}
+
+// call the mixin to generate the styles
+@include header-font-sizes();
+
+body {
+  background-color: red; // set the background color of the body element to red
+}
+
+blockquote {
+  position: relative; /* This is important to make the pseudo-elements absolute */
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  font-size: 30px;
+  color: white;
+  font-family: serif;
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 0 5px #000, 0 0 10px #f00;
+  border: 2px solid rgb(204, 204, 204);
+  text-shadow: 2px 2px 2px rgba(255, 215, 0, 0.5);
+
+  &::before {
+    content: "“";
+    position: absolute;
+    font-size: 90px;
+    top: 0px;
+    left: 10px;
+    color: white;
+  }
+
+  &::after {
+    content: "”";
+    position: absolute;
+    font-size: 90px;
+    bottom: -20px;
+    right: 20px;
+    color: white;
+  }
+}
+
+/* This code block styles the cite element, which is used to indicate the source of a quote. */
+
+cite {
+  font-size: smaller; /* sets the font size of the cite element to smaller */
+  font-style: italic; /* sets the font style of the cite element to italic */
+  font-weight: 400; /* sets the font weight of the cite element to 400 */
+  color: white; /* sets the color of the text inside the cite element to white */
+}
+
+textarea {
+  min-height: 100px;
+  min-height: 100px;
+  max-height: 200px;
+  resize: vertical;
+}
+
+@mixin border-flare() {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  font-size: 30px;
+  color: white;
+  font-family: serif;
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 0 5px #000, 0 0 10px rgb(255, 81, 81), 0 0 10px rgb(250, 177, 177);
+}
+
+.border-flare {
+  @include border-flare();
+}
+
+// Select the span element
+span {
+  font-size: 0.6em;
+  // Add the font-monospace class
+  &.font-monospace {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  }
+}
+
+.heading-shadow {
+  padding: 0 10px;
+  text-shadow: 2px 2px 2px rgba(255, 215, 0, 0.5);
+}
 

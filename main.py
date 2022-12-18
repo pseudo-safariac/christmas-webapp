@@ -2,6 +2,7 @@ from flask import Flask
 
 from config import Config
 from extensions import db
+from flask_wtf.csrf import CSRFProtect
 
 from blueprints.main.routes import bp as main_index
 
@@ -12,6 +13,9 @@ def create_app(config_class=Config) -> Flask:
 
     # Initialize Flask extensions here
     db.init_app(app)
+
+    # Configurations
+    app.secret_key='1970ddb5848934a411c4def036b68a4e3019a45d79c5d1b9d9553564522f9c8b'
 
     # Create the blueprint db
     with app.app_context():
@@ -32,6 +36,7 @@ def create_app(config_class=Config) -> Flask:
         return 'The app is Functional'
 
     return app
+
 
 
 if __name__ == '__main__':

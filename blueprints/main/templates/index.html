@@ -1,34 +1,172 @@
 {% extends 'base.html' %}
-
 {% block title %}{{ title }}{% endblock %}
+{% block style %}
+<style>
+  /* The button */
+  #btnTop {
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it appears on top */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    font-size: 28px; /* Increase font size */
+  }
+  .form-gradient {
+  /* Set the gradient as the background-image */
+  background-image: linear-gradient(to bottom, 
+    rgba(255, 0, 0, 0.8),
+    rgba(80, 0, 0, 0.4),
+    rgba(255, 0, 0, 0.4)
+  );
+}
+
+</style>
+{% endblock%}
+
 {% block body %}
-<div class="d-flex h-100 text-center text-white bg-pine_green">
-    <div class="bg-image" style="background-image: url(/static/img/christmas_1.jpg); height: auto; width:auto;">
-		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-		<header class="mb-auto">
-			<div>
-			<h3 class="float-md-start mb-0">WWTP</h3>
-			<nav class="nav nav-masthead justify-content-center float-md-end">
-				<a class="nav-link active" aria-current="page" href="#">Merry Christmas!</a>
-				<a class="nav-link" href="#">Send Greetings</a>
-				<a class="nav-link" href="#">Read Greetings</a>
-			</nav>
+<button onclick="scrollToTop()" id="btnTop" title="Go to top">
+	<i class="fa-light fa-up"></i>
+</button>  
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" style="background-color: rgba(0, 0, 0, 0.2);">
+	<main class="px-md-5 w-70 mx-auto">
+		<div class="jumbotron" style="background-image: url(/static/img/christmas_1.webp);">
+			<div class="container text-center py-3">
+			  	<h1 class="mb-3 text-white heading-shadow">
+					Merry Christmas
+				</h1>
+				<blockquote>
+					<p  class="text-christmas">
+					  As we celebrate the holiday season, we are reminded of the love and warmth that surrounds us. We hope your Christmas is filled with love, laughter, and good cheer. Merry Christmas to you and your loved ones!"
+					</p>
+					<cite class="float-end">Kevin, Lab section</cite>
+				  </blockquote>
+				  
 			</div>
-		</header>
-		
-		<main class="px-3">
-			<h1 class="text-white">Greetings Fellow Friends</h1>
-			<p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-			<p class="lead">
-			<a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white text-secondary">Open Greetings</a>
-			</p>
-			<p>This is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler textThis is filler text 		This is filler text</p>
-		</main>
-		
-		<div class="mt-auto text-white-50">
-			<p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+		</div>  
+		<div class="py-3">
+			<h2 class="mb-3 text-white" style="padding: 0 10px; text-shadow: 3px 2px 2px #4E9525;">Special Guests</h2>
 		</div>
-		</div>
-	</div>
+		<section>
+			<div class="row px-3">
+				<div class="col-md-6 border border-end-0 border-5 rounded-5 border-pine_green pt-2 py-3">
+					<h1 class="text-white heading-shadow" id="read-greetings">
+						Christmas Wishes
+					</h1>
+					<p class="lead text-white">
+						As we countdown to the holiday season, the team is eagerly awaiting the Christmas wishes from our supervisor. In the meantime, we wanted to share a few words of our own:
+					</p>
+					<h5 class="text-white">
+					"The true spirit of Christmas is love." - Unknown
+					</h5>
+				</div>
+				
+				<div class="col-md-6 border border-start-0 border-5 rounded-5 border-pine_green pt-2 py-md-3">
+					<h1 class="text-white heading-shadow">
+						Season's Greetings
+					</h1>
+					<p class="lead text-white">
+						As we countdown to the holiday season, the team is eagerly awaiting the Christmas wishes from our assistant supervisor. In the meantime, we wanted to share a famous quote about the holiday season:
+					</p>
+					<h5 class="text-white">
+						"I will honor Christmas in my heart, and try to keep it all the year." - Charles Dickens
+					</h5>
+				</div>
+			</div>
+
+			{% for message in messages %}
+				{{ macros.display_message(message) }}
+			{% endfor %}	
+
+			<div class="container-fluid border border-3 border-pine_green rounded-3 bg-xmas_red form-gradient" style="width: 500px; margin : 0 auto">
+				<form method="POST" action="" id="form-section">
+					{{ form.hidden_tag() }}
+					{{ form.csrf_token() }}
+					<div class="form-group mb-2 mt-3 col-auto form-floating">
+						{% if form.first_name.errors %}
+						{{ form.first_name(class='form-control is-invalid') }}
+						{% for error in form.first_name.errors %}
+							<div class="invalid-feedback ">
+								<span>{{ error }}</span>
+							</div>
+						{% endfor %}
+						{% else %}
+						{{ form.first_name(class='form-control col-6', placeholder="Please enter your First Name", id="first_name_register") }}
+						{{ form.first_name.label(class="col-form-label", for="first_name_register") }}
+						{% endif %}
+					</div>
+					<div class="form-group mb-2 mt-3 col-auto form-floating">
+						{% if form.last_name.errors %}
+						{{ form.last_name(class='form-control is-invalid') }}
+						{% for error in form.last_name.errors %}
+							<div class="invalid-feedback">
+								<span>{{ error }}</span>
+							</div>
+						{% endfor %}
+						{% else %}
+						{{ form.last_name(class='form-control', placeholder="Please enter your Last Name", id="last_name_register") }}
+						{{ form.last_name.label(class="col-form-label", for="last_name_register") }}
+						{% endif %}
+					</div>
+					<div class="form-group mb-2 mt-3 col-auto form-floating">
+						{% if form.email.errors %}
+						{{ form.email(class='form-control is-invalid') }}
+						{% for error in form.email.errors %}
+							<div class="invalid-feedback">
+								<span>{{ error }}</span>
+							</div>
+						{% endfor %}
+						{% else %}
+						{{ form.email(class='form-control opacity-5', placeholder="Enter your Email address", id="email_register") }}
+						{{ form.email.label(class="col-form-label", for="email_register") }}
+						{% endif %}
+					</div>
+					<div class="form-group mb-2 mt-3 col-auto form-floating">
+						{% if form.message.errors %}
+							{{ form.message(class='form-control is-invalid', rows='20') }}
+							{% for error in form.message.errors %}
+								<div class="invalid-feedback">
+									<span>{{ error }}</span>
+								</div>
+							{% endfor %}
+						{% else %}
+							{{ form.message(class='form-control opacity-5', placeholder="Write your Message here...", id="message", rows='20') }}
+							{{ form.message.label(class="col-form-label", for="message") }}
+						{% endif %}
+					</div>
+					
+					
+					<div class="mb-3 btn btn-outline-gold text-white">
+						{{ form.submit(class='btn btn-primary') }}
+					</div>
+				</form>
+			</div>
+		</section>
+	</main>
 </div>
+{% endblock %}
+{% block script %}
+<script>
+	// When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function() {
+    scrollFunction()
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("btnTop").style.display = "block";
+    } else {
+      document.getElementById("btnTop").style.display = "none";
+    }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function scrollToTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+</script>
 {% endblock %}
