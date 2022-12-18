@@ -67,7 +67,7 @@ def index():
 
 		# Query the database for all messages
 		messages = MessageDB.query.all()
-		print(messages, type(messages), len(messages), [_ for _ in messages], messages[0])
+		print(f"The table has : {len(messages)} entries")
 
 		# Render the index template and pass in the messages as an argument
 		return render_template('index.html', messages=messages, form=form, title='Merry Christmas!')

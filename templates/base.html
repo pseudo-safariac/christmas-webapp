@@ -22,22 +22,20 @@
 	</head>	
 	<body class="d-flex h-100 text-center bg-xmas_red">
 		<div class="d-flex row h-100 text-center bg-pine_green">
-		  <div class="bg-image" style="background-image: url(/static/img/christmas_2.webp);">
+		  <div class="bg-image" style="background-image: url(/static/img/christmas_2.webp); height: auto; width:auto;">
 			<header class="mb-auto">
-				<br>
 				<div>
 					<a href="#" tabindex="0">
 						<h1 class="float-md-start mb-0 text-white" style="padding: 0 10px; text-shadow: 4px 6px 2px rgba(0,0,0,0.5);">WWTP</h1>
-					  </a>					  
-					  <div class="d-flex justify-content-center mt-3 mx-2">
+					</a>					  
+					<div class="d-flex justify-content-center mt-3 mx-2">
 						<a class="btn btn-outline-pine_green text-white" href="#form-section" role="button">
-						  Send Greetings <i class="fa-solid fa-wand-magic-sparkles"></i>
+							Send Greetings <i class="fa-solid fa-wand-magic-sparkles"></i>
 						</a>
 						<a class="btn btn-outline-pine_green text-white mx-3" href="#read-greetings" role="button">
 							Read Greetings <i class="fa-solid fa-book-open"></i>
 						</a>
-					  </div>
-					  
+					</div>  
 				</div>
 			</header>
 			{% block body %}{% endblock %}
