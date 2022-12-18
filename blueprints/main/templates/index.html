@@ -2,7 +2,7 @@
 {% block title %}{{ title }}{% endblock %}
 {% block style %}
 <style>
-  /* The button, not placed with CSS because of the bug */
+  /* The button */
   #btnTop {
     position: fixed; /* Fixed position */
     bottom: 20px; /* Place the button at the bottom of the page */
@@ -27,7 +27,11 @@
 {% endblock%}
 
 {% block body %}
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+<button onclick="scrollToTop()" id="btnTop" title="Go to top">
+	<i class="fa-light fa-up"></i>
+</button>  
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" style="background-color: rgba(0, 0, 0, 0.2);">
 	<main class="px-md-5 w-70 mx-auto">
 		<div class="jumbotron" style="background-image: url(/static/img/christmas_1.webp);">
 			<div class="container text-center py-3">
@@ -38,8 +42,9 @@
 					<p  class="text-christmas">
 					  As we celebrate the holiday season, we are reminded of the love and warmth that surrounds us. We hope your Christmas is filled with love, laughter, and good cheer. Merry Christmas to you and your loved ones!"
 					</p>
-					<cite class="float-end">Unknown</cite>
-				</blockquote>  
+					<cite class="float-end">Kevin, Lab section</cite>
+				  </blockquote>
+				  
 			</div>
 		</div>  
 		<div class="py-3">
@@ -73,15 +78,15 @@
 			</div>
 
 			
-			<div class="container-fluid border border-3 border-gold rounded-3 py-3 p-5 my-3">
-				<div class="bg-image container-fluid py-3 text-center text-white" style="background-image: url(/static/img/christmas_3.webp); font-size: 30px; text-shadow: 2px 2px 2px rgba(255, 215, 0, 0.5); border: 3px solid white; font-family: serif; position: relative;">
+			<div class="container-fluid border border-3 border-gold rounded-3 bg-xmas_red bg-gradient py-3 p-5 my-3">
+				<div class="bg-image container-fluid py-3 text-center text-white">
 					{% for message in messages %}
 						{{ macros.display_message(message) }}
 					{% endfor %}
 				</div>
 			  </div>
 
-			<div class="container-fluid border border-3 border-pine_green rounded-3 bg-xmas_red form-gradient">
+			<div class="container-fluid border border-3 border-pine_green rounded-3 bg-xmas_red form-gradient" style="width: 500px; margin : 0 auto">
 				<form method="POST" action="" id="form-section">
 					{{ form.hidden_tag() }}
 					{{ form.csrf_token() }}
@@ -137,6 +142,8 @@
 							{{ form.message.label(class="col-form-label", for="message") }}
 						{% endif %}
 					</div>
+					
+					
 					<div class="mb-3 btn btn-outline-gold text-white">
 						{{ form.submit(class='btn btn-primary') }}
 					</div>
@@ -145,9 +152,6 @@
 		</section>
 	</main>
 </div>
-<button onclick="scrollToTop()" id="btnTop" title="Go to top">
-	<i class="fa-light fa-up"></i>
-</button>
 {% endblock %}
 {% block script %}
 <script>

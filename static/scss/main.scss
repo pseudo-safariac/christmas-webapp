@@ -27,6 +27,13 @@ $theme-colors: (
   "light-blue": $light-blue,
 ));
 
+// Style the off-canvas container element
+.offcanvas-container {
+  // Set the container to be fixed to the top and left of the page
+  position: fixed;
+  top: 0;
+  left: -300px; // Set the width of the container to 300px
+}
   // Style the footer element
 footer {
   // Set the position of the footer to fixed
@@ -90,6 +97,10 @@ p {
 // call the mixin to generate the styles
 @include header-font-sizes();
 
+body {
+  background-color: red; // set the background color of the body element to red
+}
+
 blockquote {
   position: relative; /* This is important to make the pseudo-elements absolute */
   background-color: rgba(0, 0, 0, 0.5);
@@ -142,12 +153,20 @@ textarea {
 @mixin border-flare() {
   background-color: rgba(0, 0, 0, 0.5);
   position: relative;
+<<<<<<< HEAD
   // font-size: 30px; // Causes the structure to break on smaller screen sizes
+=======
+  font-size: 30px;
+>>>>>>> parent of e62a3cf (Cleared the misshaping bug. Decorating now with SVG animations)
   color: white;
   font-family: serif;
   border: 3px solid white;
   border-radius: 10px;
+<<<<<<< HEAD
   // padding: 40px;   // Causes the structure to break on smaller screen sizes
+=======
+  padding: 40px;
+>>>>>>> parent of e62a3cf (Cleared the misshaping bug. Decorating now with SVG animations)
   box-shadow: 0 0 5px #000, 0 0 10px rgb(255, 81, 81), 0 0 10px rgb(250, 177, 177);
 }
 
