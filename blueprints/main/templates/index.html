@@ -73,8 +73,8 @@
 			</div>
 
 			
-			<div class="container-fluid border border-3 border-gold rounded-3 bg-xmas_red bg-gradient py-3 p-5 my-3">
-				<div class="bg-image container-fluid py-3 text-center text-white">
+			<div class="container-fluid border border-3 border-gold rounded-3 py-3 p-5 my-3">
+				<div class="bg-image container-fluid py-3 text-center text-white" style="background-image: url(/static/img/christmas_3.webp); font-size: 30px; text-shadow: 2px 2px 2px rgba(255, 215, 0, 0.5); border: 3px solid white; font-family: serif; position: relative;">
 					{% for message in messages %}
 						{{ macros.display_message(message) }}
 					{% endfor %}

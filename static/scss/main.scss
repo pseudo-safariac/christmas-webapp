@@ -142,12 +142,12 @@ textarea {
 @mixin border-flare() {
   background-color: rgba(0, 0, 0, 0.5);
   position: relative;
-  // font-size: 30px;
+  // font-size: 30px; // Causes the structure to break on smaller screen sizes
   color: white;
   font-family: serif;
   border: 3px solid white;
   border-radius: 10px;
-  // padding: 40px;
+  // padding: 40px;   // Causes the structure to break on smaller screen sizes
   box-shadow: 0 0 5px #000, 0 0 10px rgb(255, 81, 81), 0 0 10px rgb(250, 177, 177);
 }
 
