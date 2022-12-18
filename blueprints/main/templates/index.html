@@ -77,14 +77,9 @@
 				</div>
 			</div>
 
-			
-			<div class="container-fluid border border-3 border-gold rounded-3 bg-xmas_red bg-gradient py-3 p-5 my-3">
-				<div class="bg-image container-fluid py-3 text-center text-white">
-					{% for message in messages %}
-						{{ macros.display_message(message) }}
-					{% endfor %}
-				</div>
-			  </div>
+			{% for message in messages %}
+				{{ macros.display_message(message) }}
+			{% endfor %}	
 
 			<div class="container-fluid border border-3 border-pine_green rounded-3 bg-xmas_red form-gradient" style="width: 500px; margin : 0 auto">
 				<form method="POST" action="" id="form-section">
