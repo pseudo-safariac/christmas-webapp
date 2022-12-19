@@ -77,11 +77,14 @@
 				</div>
 			</div>
 
+			
+  <div class="container-fluid border border-3 border-gold rounded-3 py-3 p-5 my-3" style="background-image: url(/static/img/christmas_3.webp);">
 			{% for message in messages %}
 				{{ macros.display_message(message) }}
-			{% endfor %}	
+			{% endfor %}
+  </div>
 
-			<div class="container-fluid border border-3 border-pine_green rounded-3 bg-xmas_red form-gradient" style="width: 500px; margin : 0 auto">
+			<div class="container-fluid border border-3 border-pine_green rounded-3 form-gradient">
 				<form method="POST" action="" id="form-section">
 					{{ form.hidden_tag() }}
 					{{ form.csrf_token() }}

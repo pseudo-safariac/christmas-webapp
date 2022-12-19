@@ -32,14 +32,12 @@
 
 
 {% macro display_message(message) %}
-  <div class="container-fluid border border-3 border-gold rounded-3 bg-xmas_red bg-gradient py-3 p-5 my-3">
     <div class="container-fluid py-3 text-center text-white">
-      <div class="border rounded p-4 mb-4 border-flare" style="font-size: 14px;">
-        <p class="font-weight-bold">{{ message.message }}</p>
-        <p class="float-end text-sm" style="font-size: 12px;">
+      <div class="border rounded border-flare">
+        <p class="font-weight-bold p-4 mb-auto">{{ message.message }}</p>
+        <p class="float-end text-sm">
           {{ message.name }} <span>({{ message.timestamp }})</span>
         </p>
       </div>
     </div>
-  </div>
 {% endmacro %}
