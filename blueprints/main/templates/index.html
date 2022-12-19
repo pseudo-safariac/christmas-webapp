@@ -173,7 +173,7 @@
   
   // Like code
   // Get all the thumbs up icon elements
-const thumbUpIcons = document.querySelectorAll('.fa-thumbs-up');
+const thumbUpIcons = document.querySelectorAll('.fa-thumbs-up.icon');
 
 // Loop through the icon elements
 thumbUpIcons.forEach(function(icon) {
@@ -181,6 +181,12 @@ thumbUpIcons.forEach(function(icon) {
   icon.addEventListener('click', function() {
     // Toggle the 'liked' class on the icon
     icon.classList.toggle('liked');
+
+    // Toggle the 'clicked' class on the icon
+    icon.classList.toggle('clicked');
+
+	// Toggle the 'unliked' class on the icon
+	icon.classList.toggle('unliked');
   });
 });
 
