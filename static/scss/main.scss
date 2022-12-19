@@ -68,6 +68,7 @@ p {
   text-shadow: 1px 1px 2px rgba(255, 215, 0, 0.5);
   color: white;
   font-family: serif;
+  word-wrap: break-word;
 }
 
 
@@ -181,3 +182,23 @@ span {
   text-shadow: 2px 2px 2px rgba(255, 215, 0, 0.5);
 }
 
+/* Add a hover effect to the thumbs up icon */
+i.fa-thumbs-up:hover {
+  color: #ff0000; /* Change the color of the icon on hover */
+}
+
+/* Add a transition effect to the thumbs up icon */
+i.fa-thumbs-up {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Add a style for the liked state of the icon */
+i.fa-thumbs-up.liked {
+  color: #00ff00; /* Change the color of the icon when it is liked */
+  transform: scale(1.5); /* Scale the icon up when it is liked */
+}
+
+/* Add an intermediary color for the transition between red and green */
+i.fa-thumbs-up.liked:hover {
+  color: #ffff00; /* Yellow */
+}

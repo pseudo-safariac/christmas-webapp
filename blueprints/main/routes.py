@@ -44,7 +44,7 @@ def index():
 				browser=browser,
 				screen_resolution=screen_resolution,
 				accept_language=accept_language,
-				mode_preference=mode_preference
+				mode_preference=mode_preference,
 			)
 			db.session.add(data)
 			db.session.commit()
@@ -70,10 +70,9 @@ def index():
 		print(messages, type(messages), len(messages), [_ for _ in messages], messages[0])
 
 		# Render the index template and pass in the messages as an argument
-		return render_template('index.html', messages=messages, form=form, title='Merry Christmas!')
+		return render_template('index.html',messages=messages, form=form, title='Merry Christmas!')
 
 	if not form.validate_on_submit():
 		flash("An entry with the given email address already exists. Please contact the administrator.")
 		return render_template('index.html', form=form, title='Merry Christmas!')
-
 

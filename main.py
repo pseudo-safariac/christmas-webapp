@@ -1,6 +1,7 @@
 from flask import Flask
 
 from config import Config
+from jinja_config import env
 from extensions import db
 from flask_wtf.csrf import CSRFProtect
 

@@ -49,6 +49,8 @@ class MessageForm(FlaskForm):
 		self.email.data = ''
 		self.message.data = ''
 
+	
+
 
 
 

@@ -1,5 +1,5 @@
 {# macros file holds jinja functions that are going to be re-used in the project #}
-{}
+
 
 {% macro carousel(id, items, filler_text) %}
 <div id="{{ id }}" class="carousel slide" data-bs-ride="carousel">
@@ -34,7 +34,10 @@
 {% macro display_message(message) %}
     <div class="container-fluid py-3 text-center text-white">
       <div class="border rounded border-flare">
-        <p class="font-weight-bold p-4 mb-auto">{{ message.message }}</p>
+        <p class="font-weight-bold p-4 mb-auto">
+          {{ message.message }}
+          <i class="fa-regular fa-thumbs-up float-end" data-message-id="{{ message.id }}"></i>
+        </p>
         <p class="float-end text-sm">
           {{ message.name }} <span>({{ message.timestamp }})</span>
         </p>

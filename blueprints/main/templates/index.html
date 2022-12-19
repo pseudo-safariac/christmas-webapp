@@ -77,12 +77,11 @@
 				</div>
 			</div>
 
-			
-  <div class="container-fluid border border-3 border-gold rounded-3 py-3 p-5 my-3" style="background-image: url(/static/img/christmas_3.webp);">
-			{% for message in messages %}
-				{{ macros.display_message(message) }}
-			{% endfor %}
-  </div>
+			<div class="container-fluid border border-3 border-gold rounded-3 py-3 p-5 my-3 w-70" style="background-image: url(/static/img/christmas_3.webp); object-fit: cover;">
+						{% for message in messages %}
+							{{ macros.display_message(message) }}
+						{% endfor %}
+			</div>
 
 			<div class="container-fluid border border-3 border-pine_green rounded-3 form-gradient">
 				<form method="POST" action="" id="form-section">
@@ -171,5 +170,19 @@
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
+  
+  // Like code
+  // Get all the thumbs up icon elements
+const thumbUpIcons = document.querySelectorAll('.fa-thumbs-up');
+
+// Loop through the icon elements
+thumbUpIcons.forEach(function(icon) {
+  // Add a click event listener to the icon
+  icon.addEventListener('click', function() {
+    // Toggle the 'liked' class on the icon
+    icon.classList.toggle('liked');
+  });
+});
+
 </script>
 {% endblock %}
