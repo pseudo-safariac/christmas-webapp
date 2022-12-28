@@ -22,27 +22,44 @@
     rgba(255, 0, 0, 0.4)
   );
 }
+.skip-link {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
 
+  .skip-link:focus {
+    opacity: 1;
+  }
 </style>
 {% endblock%}
 
 {% block body %}
 <button onclick="scrollToTop()" id="btnTop" title="Go to top">
 	<i class="fa-light fa-up"></i>
-</button>  
+</button>
+<div id="alert">
+	<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+	Remember, Write a message if you wish to experience the Christmas spirit 😎
+  </div>
+  
 
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" style="background-color: rgba(0, 0, 0, 0.2);">
-	<main class="px-md-5 w-70 mx-auto" id="main-content">
-		<div class="jumbotron" style="background-image: url(/static/img/christmas_1.webp);">
+	<main class="px-md-5 w-70 mx-auto">
+		<div class="jumbotron" role="banner" style="background-image: url(/static/img/christmas_1.webp);">
 			<div class="container text-center py-3">
-			  	<h1 class="mb-3 text-white heading-shadow">
+			  	<h1 class="mb-3 text-white heading-shadow" role="heading">
 					Merry Christmas
+					<i class="fa-regular fa-star" id="star" aria-label="star icon"></i>	
 				</h1>
-				<blockquote>
-					<p  class="text-christmas">
+				<blockquote role="quote">
+					<p  class="text-christmas" role="paragraph">
 					  As we celebrate the holiday season, we are reminded of the love and warmth that surrounds us. We hope your Christmas is filled with love, laughter, and good cheer. Merry Christmas to you and your loved ones!"
 					</p>
-					<cite class="float-end">Kevin, Lab section</cite>
+					<cite class="float-end" role="citation">Unknown</cite>
 				  </blockquote>
 				  
 			</div>
@@ -51,91 +68,91 @@
 			<h2 class="mb-3 text-white" style="padding: 0 10px; text-shadow: 3px 2px 2px #4E9525;">Special Guests</h2>
 		</div>
 		<section>
-			<div class="row px-3">
-				<div class="col-md-6 border border-end-0 border-5 rounded-5 border-pine_green pt-2 py-3">
-					<h1 class="text-white heading-shadow" id="read-greetings">
+			<div class="row px-3" role="row">
+				<div class="col-md-6 border border-end-0 border-5 rounded-5 border-pine_green pt-2 py-3" role="columnheader">
+					<h1 class="text-white heading-shadow" id="read-greetings" role="heading">
 						Christmas Wishes
-					</h1>
-					<p class="lead text-white">
+					</h1>					  
+					<p class="lead text-white" role="paragraph">
 						As we countdown to the holiday season, the team is eagerly awaiting the Christmas wishes from our supervisor. In the meantime, we wanted to share a few words of our own:
 					</p>
-					<h5 class="text-white">
+					<h5 class="text-white" aria-label="quote">
 					"The true spirit of Christmas is love." - Unknown
 					</h5>
 				</div>
 				
-				<div class="col-md-6 border border-start-0 border-5 rounded-5 border-pine_green pt-2 py-md-3">
+				<div class="col-md-6 border border-start-0 border-5 rounded-5 border-pine_green pt-2 py-md-3" role="columnheader">
 					<h1 class="text-white heading-shadow">
 						Season's Greetings
 					</h1>
-					<p class="lead text-white">
+					<p class="lead text-white" role="paragraph">
 						As we countdown to the holiday season, the team is eagerly awaiting the Christmas wishes from our assistant supervisor. In the meantime, we wanted to share a famous quote about the holiday season:
 					</p>
-					<h5 class="text-white">
+					<h5 class="text-white" aria-label="quote">
 						"I will honor Christmas in my heart, and try to keep it all the year." - Charles Dickens
 					</h5>
 				</div>
 			</div>
 
-			<div class="container-fluid border border-3 border-gold rounded-3 py-3 p-5 my-3 w-70" style="background-image: url(/static/img/christmas_3.webp); object-fit: cover;">
-						{% for message in messages %}
-							{{ macros.display_message(message) }}
-						{% endfor %}
+			<div class="container-fluid border border-3 border-pine_green rounded-3 py-3 p-5 my-3 w-70" style="background-image: url(/static/img/christmas_3.webp); object-fit: cover;" id="main-content">
+				{% for message in messages %}
+					{{ macros.display_message(message) }}
+				{% endfor %}
 			</div>
 
 			<div class="container-fluid border border-3 border-pine_green rounded-3 form-gradient">
-				<form method="POST" action="" id="form-section">
+				<form method="POST" action="" id="form-section" role="form">
 					{{ form.hidden_tag() }}
 					{{ form.csrf_token() }}
-					<div class="form-group mb-2 mt-3 col-auto form-floating">
+					<div class="form-group mb-2 mt-3 col-auto form-floating" role="group">
 						{% if form.first_name.errors %}
-						{{ form.first_name(class='form-control is-invalid') }}
+						{{ form.first_name(class='form-control is-invalid' aria-describedby="first_name_error") }}
 						{% for error in form.first_name.errors %}
-							<div class="invalid-feedback ">
+							<div class="invalid-feedback" id="first_name_error">
 								<span>{{ error }}</span>
 							</div>
 						{% endfor %}
 						{% else %}
-						{{ form.first_name(class='form-control col-6', placeholder="Please enter your First Name", id="first_name_register") }}
+						{{ form.first_name(class='form-control col-6', placeholder="Please enter your First Name", id="first_name_register" label="First Name") }}
 						{{ form.first_name.label(class="col-form-label", for="first_name_register") }}
 						{% endif %}
 					</div>
 					<div class="form-group mb-2 mt-3 col-auto form-floating">
 						{% if form.last_name.errors %}
-						{{ form.last_name(class='form-control is-invalid') }}
+						{{ form.last_name(class='form-control is-invalid' aria-describedby="last_name_error") }}
 						{% for error in form.last_name.errors %}
-							<div class="invalid-feedback">
+							<div class="invalid-feedback" id="last_name_error">
 								<span>{{ error }}</span>
 							</div>
 						{% endfor %}
 						{% else %}
-						{{ form.last_name(class='form-control', placeholder="Please enter your Last Name", id="last_name_register") }}
+						{{ form.last_name(class='form-control', placeholder="Please enter your Last Name", id="last_name_register" label="Last Name") }}
 						{{ form.last_name.label(class="col-form-label", for="last_name_register") }}
 						{% endif %}
 					</div>
 					<div class="form-group mb-2 mt-3 col-auto form-floating">
 						{% if form.email.errors %}
-						{{ form.email(class='form-control is-invalid') }}
+						{{ form.email(class='form-control is-invalid' aria-describedby="email_errors") }}
 						{% for error in form.email.errors %}
-							<div class="invalid-feedback">
+							<div class="invalid-feedback" id="email_errors">
 								<span>{{ error }}</span>
 							</div>
 						{% endfor %}
 						{% else %}
-						{{ form.email(class='form-control opacity-5', placeholder="Enter your Email address", id="email_register") }}
+						{{ form.email(class='form-control opacity-5', placeholder="Enter your Email address", id="email_register" label="Email") }}
 						{{ form.email.label(class="col-form-label", for="email_register") }}
 						{% endif %}
 					</div>
 					<div class="form-group mb-2 mt-3 col-auto form-floating">
 						{% if form.message.errors %}
-							{{ form.message(class='form-control is-invalid', rows='20') }}
+							{{ form.message(class='form-control is-invalid', rows='20' aria-describedby="message_errors) }}
 							{% for error in form.message.errors %}
-								<div class="invalid-feedback">
+								<div class="invalid-feedback" id="message_errors">
 									<span>{{ error }}</span>
 								</div>
 							{% endfor %}
 						{% else %}
-							{{ form.message(class='form-control opacity-5', placeholder="Write your Message here...", id="message", rows='20') }}
+							{{ form.message(class='form-control opacity-5', placeholder="Write your Message here...", id="message", rows='20' label="Message") }}
 							{{ form.message.label(class="col-form-label", for="message") }}
 						{% endif %}
 					</div>
@@ -189,6 +206,25 @@ thumbUpIcons.forEach(function(icon) {
 	icon.classList.toggle('unliked');
   });
 });
+
+// The popup
+var alert = document.getElementById("alert");
+
+// Add the "show" class to the alert
+alert.classList.add("show");
+
+// Add an event listener to the alert element that listens for a click event
+alert.addEventListener("click", function() {
+  // When the event is triggered, remove the "show" class from the alert
+  alert.classList.remove("show");
+});
+
+// After 2 seconds, remove the "show" class from the alert
+setTimeout(function() {
+  alert.classList.remove("show");
+}, 2000);
+
+
 
 </script>
 {% endblock %}

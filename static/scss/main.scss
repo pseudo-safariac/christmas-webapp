@@ -203,9 +203,11 @@ span {
 /* Add an intermediary color mixin for the transition between red and green */
 @mixin hoverLikedStyle {
   &:hover {
-    color: #ffff00;
+    color: #3cff00;
+    box-shadow: 0 0 5px white;
   }
 }
+
 
 /* Add a bounce animation mixin */
 @keyframes bounce {
@@ -237,4 +239,60 @@ i.fa-thumbs-up.liked {
 
 i.fa-thumbs-up.clicked {
   @include bounceAnimation;
+}
+
+// Styles for the alert element
+#alert {
+  padding: 20px;
+  // Add a gradient to the background of the alert
+  background: linear-gradient(to top, #FFD700, #ffd90092);
+  color: white;
+  margin-bottom: 15px;
+  transition: 0.3s;
+
+  &:hover {
+    // Reduce the opacity of the alert on hover
+    opacity: 0.8;
+    // Change the background color on hover
+    background: linear-gradient(to right, $pine-green, #56d90a);
+  }
+
+  // Styles for the close button
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    // Change the color of the close button on hover
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+// Star animation
+#star {
+  animation: rotate-fade-in-out 4s linear infinite;
+}
+
+@keyframes rotate-fade-in-out {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(360deg);
+  }
 }
